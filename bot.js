@@ -115,8 +115,6 @@ client.on('message', async message => {
 			let channel = message.guild.channels.cache.get(channelDB.id);
 			channel.setTopic(getTopycMsg(message.guild.members.cache.filter(member => !member.user.bot).size))
 				.catch(console.error);
-				
-			console.log(channelDB.id);
 		});
 		
 		message.reply('Contadores de membros atualizados!');
@@ -126,7 +124,7 @@ client.on('message', async message => {
 
 // update member counter on channels topic when member join guild
 client.on('guildMemberAdd', async member => {
-	db.get(`${message.guild.id}.countChannels`).value().forEach(channelDB => { 
+	db.get(`${member.guild.id}.countChannels`).value().forEach(channelDB => { 
 		let channel = member.guild.channels.cache.get(channelDB.id);
 		channel.setTopic(getTopycMsg(member.guild.members.cache.filter(member => !member.user.bot).size))
 			.catch(console.error);
@@ -135,7 +133,7 @@ client.on('guildMemberAdd', async member => {
 
 // update member counter on channels topic when member leave guild
 client.on('guildMemberRemove', async member => {
-	db.get(`${message.guild.id}.countChannels`).value().forEach(channelDB => { 
+	db.get(`${member.guild.id}.countChannels`).value().forEach(channelDB => { 
 		let channel = member.guild.channels.cache.get(channelDB.id);
 		channel.setTopic(getTopycMsg(member.guild.members.cache.filter(member => !member.user.bot).size))
 			.catch(console.error);
