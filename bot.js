@@ -6,8 +6,6 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('database.json')
 const db = low(adapter)
 
-let memberCountChannels = [];
-
 client.on('ready', () => {
 	console.log(`Logado como: ${client.user.tag}!`);
 	console.log(`Esse Bot é utilizado em mais de ${client.guilds.size} servidores!`);
