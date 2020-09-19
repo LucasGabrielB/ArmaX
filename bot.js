@@ -110,7 +110,6 @@ client.on('message', async message => {
 		}
 	}
 	else if(comand === 'contador-atualizar'){
-		console.log('atualizando..');
 		db.get(`${message.guild.id}.countChannels`).value().forEach(channelDB => { 
 			let channel = message.guild.channels.cache.get(channelDB.id);
 			channel.setTopic(getTopycMsg(message.guild.members.cache.filter(member => !member.user.bot).size))
