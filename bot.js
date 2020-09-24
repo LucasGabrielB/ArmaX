@@ -48,7 +48,7 @@ function getTopycMsg(qtd){
 				qtdStr += '<a:5RS:696501769546498048>'
 				break;
 			case '6':
-				qtdStr += '<a:6RS:696501769685172234>>'
+				qtdStr += '<a:6RS:696501769685172234>'
 				break;
 			case '7':
 				qtdStr += '<a:7RS:696501769659875398>'
