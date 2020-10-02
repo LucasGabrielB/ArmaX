@@ -8,7 +8,7 @@ const db = low(adapter)
 
 client.on('ready', () => {
 	console.log(`Logado como: ${client.user.tag}!`);
-	console.log(`Esse Bot é utilizado em mais de ${client.guilds.size} servidores!`);
+	console.log(`Esse Bot é utilizado em ${client.guilds.cache.size} servidores!`);
 });
 
 // add this guild to database
